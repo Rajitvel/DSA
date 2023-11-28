@@ -1,0 +1,19 @@
+# cook your dish here
+p1,p2,p3,p4=map(int,input().split())
+c=0
+l=[p1,p2,p3,p4]
+for i in l:
+    if i>=10:
+        c+=1
+print(c)
+
+# cook your dish here
+t=int(input())
+for i in range(t):
+    x,y,z=map(int,input().split())
+    m=x*y
+    n=z*24*60
+    if(m<=n):
+        print("YES")
+    else:
+        print("NO")
