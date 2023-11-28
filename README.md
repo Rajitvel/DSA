@@ -1,1 +1,1 @@
-This repostity explain codechef solutions to simple os problems
+This repository explain codechef solutions to simple os problems
