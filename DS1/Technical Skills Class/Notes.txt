@@ -1,0 +1,143 @@
+07-11-2023
+-----------------------------------------------------------
+1. C++ Program to find the word count in a given string.
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main(){
+    string poem = "The woods are lovely, dark and deep, But I have promise lorem ipsum";
+    int word_count = 1;
+
+    for(int i=0; i<poem.length(); i++){
+        if(poem[i]==' '){
+            word_count++;
+        }
+    }
+
+    cout << "The number of words in the poem is: " << word_count << endl;
+
+    return 0;
+}
+
+-----------------------------------------------------------
+2. C++ Program to check whether given strings are Anagram are not.
+
+#include <iostream>
+#include <algorithm>
+
+using namespace std;
+
+int main(){
+    string str1 = "debit card";
+    string str2 = "bad credit";
+
+    sort(str1.begin(),str1.end());
+    sort(str2.begin(),str2.end());
+
+    if(str1==str2){
+        cout << "The strings are anagrams!" << endl;
+    }
+    else{
+        cout << "The strings are not anagrams." << endl;
+    }
+
+    return 0;
+}
+-----------------------------------------------------------
+3. C++ Program to remove spaces in a string.
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main(){
+    string input = "Once upon a time, there lived a ghost, He was known to be the killer and fear the most.....";
+    string output = " ";
+    
+    for(int i=0; i<input.length(); i++){
+        if(input[i]!=' '){
+            output+=input[i];
+        }
+    }
+
+    cout << "The input string without vowels is: " << output << endl;
+    return 0;
+}
+
+-----------------------------------------------------------
+4. C++ Program to remove vowels in a string.
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main(){
+    string input = "Once upon a time, there lived a ghost, He was known to be the killer and fear the most.....";
+    string output = " ";
+    
+    for(int i=0; i<input.length(); i++){
+        if(input[i]!='a' && input[i]!='e' && input[i]!='i' && input[i]!='o' && input[i]!='u' && input[i]!='A' && input[i]!='E' && input[i]!='I' && input[i]!='O' && input[i]!='U'){
+            output+=input[i];
+        }
+    }
+
+    cout << "The input string without vowels is: " << output << endl;
+    return 0;
+}
+
+-------------------------------------------------------------
+5. Code Force Question 41 A
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main(){
+    string input, input2;
+    cin >> input;
+    cin >> input2;
+    
+    string output;
+
+    for(int i = input.length()-1; i>=0; i--){
+        output.push_back(input[i]);
+    }
+
+    if(output == input2){
+        cout << "YES";
+    }
+    else
+    {
+        cout << "NO";
+    }
+    return 0;
+}
+
+-------------------------------------------------------------
+6.Code Forces Question 59A
+
+7. Leetcode Two Sums Question:
+class Solution(object):
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        for i in range(len(nums)):
+            for j in range(i+1, len(nums)):
+                if nums[i]+nums[j]==target:
+                    return [i,j]
+        
+
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        seen = {}
+
+        for i in range(len(nums)):
+            if nums[i] in seen:
+                return[seen[nums[i]],i]
+            else:
+                seen[target - nums[i]] = i
+        
